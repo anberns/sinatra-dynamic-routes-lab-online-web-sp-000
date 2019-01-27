@@ -11,4 +11,12 @@ class App < Sinatra::Base
     @square.to_s 
   end
   
+  get '/say/:number/:phrase' do
+    @str = ""
+    @count = params[:number].to_i
+    while @count > 0 
+      @str += params[:phrase]
+    end
+    @str
+  end
 end
